@@ -1,0 +1,44 @@
+body {
+  font-family: "Ledger", serif;
+}
+
+.container {
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.done-task {
+  text-decoration: line-through;
+}
+
+.item-list-tasks {
+  cursor: pointer;
+  background-image: url(square.png);
+  padding-left: 2rem;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  list-style-type: none;
+}
+.item-list-tasks:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: "Comfortaa", cursive;
+  text-align: center;
+}
+
+.button {
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 8px;
+  cursor: pointer;
+  background: #2875be;
+  color: #ffffff;
+  border: none;
+  margin: 10px 7px; /* top-bottom,right-left */
+}

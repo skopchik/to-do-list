@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO-LIST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ledger&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="main.js"></script>
+    <link rel="icon" href="img/logo.svg" type="image/svg" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="title">To Do List</h1>
+        <p>Какое задание Вы хотите добавить?</p>
+      </header>
+
+      <div class="todo_list">
+        <div class="create_new_todo">
+          <input
+            class="message"
+            type="text"
+            name="task"
+            placeholder="description"
+          />
+
+          <button class="add button">ADD TASK</button>
+        </div>
+
+        <div class="wrapper">
+          <ul class="list-tasks"></ul>
+        </div>
+      </div>
+
+      <!-- <ul class="list-tasks">
+        <li class="item-list-tasks">Изучить GRID</li>
+        <li class="item-list-tasks">Изучить FLEX</li>
+        <li class="item-list-tasks">Изучить технологию Git</li>
+        <li class="item-list-tasks">Прочитать всю теорию на сайте learn.js</li>
+        <li class="item-list-tasks">Начать изучать React</li>
+        <li class="item-list-tasks">Сходить на собеседование по JS</li>
+      </ul>
+      <button class="all-done button">ALL IS DONE</button>
+      <button class="nthg-done button">NTHG IS DONE</button> -->
+    </div>
+  </body>
+</html>
