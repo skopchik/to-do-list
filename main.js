@@ -6,20 +6,6 @@ let message = document.querySelector(".message");
 let listOfTasks = document.querySelector(".list-tasks");
 let todoList = [];
 
-listOfTasks.addEventListener("click", (e) => {
-    let valueTask = listOfTasks.querySelector("#" + e.target.getAttribute("id")).innerHTML;
-
-    todoList.forEach((item) => {
-        if (item.description === valueTask) {
-            console.log(item.done);
-            item.done = !item.done;
-            console.log(item.done);
-            localStorage.setItem("todo", JSON.stringify(todoList));
-        }
-    });
-});
-
-
 function displayMessages() {
     let displayMessage = "";
     todoList.forEach((item, i) => {
@@ -31,11 +17,37 @@ function displayMessages() {
 }
 
 
+listOfTasks.addEventListener("click", (e) => {
+    //let valueTask = listOfTasks.querySelector("#" + e.target.getAttribute("id")).innerHTML;
+    let valueTask = e.target.innerHTML;
+    todoList.forEach((item) => {
+        if (item.description === valueTask) {
+            item.done = !item.done;
+        }
+    });
+    localStorage.setItem("todo", JSON.stringify(todoList));
+    displayMessages();
+});
+
+
+
+listOfTasks.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    let valueTask = e.target.innerHTML;
+    todoList.forEach((item) => {
+        if (item.description === valueTask) {
+            item.important = !item.important;
+        }
+    });
+    localStorage.setItem("todo", JSON.stringify(todoList));
+    displayMessages();
+});
+
+
+
 if (localStorage.getItem("todo")) {
     todoList = JSON.parse(localStorage.getItem("todo"));
     displayMessages();
-
-
 }
 
 buttonAdd.addEventListener("click", () => {
@@ -46,12 +58,9 @@ buttonAdd.addEventListener("click", () => {
     };
 
     todoList.push(newTodo);
-    displayMessages();
     localStorage.setItem("todo", JSON.stringify(todoList));
+    displayMessages();
 });
-
-
-
 
 function itemIsDone() {
     let arrItemsTasks = document.querySelectorAll(".item-list-tasks");
@@ -65,7 +74,6 @@ function itemIsDone() {
 
 
 /*
-
 const buttonAllDone = document.querySelector(".all-done");
 buttonAllDone.addEventListener("click", () => {
     arrItemsTasks.forEach(function (item) {
